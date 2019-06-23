@@ -8,7 +8,7 @@ import Paintings from './Paintings';
 
 export default function Main() {
   return(
-    <div>
+    <main>
       <Switch>
         <Route exact path="/about" component={About} />
         <Route exact path="/cv" component={CV} />
@@ -16,6 +16,6 @@ export default function Main() {
         <Route exact path="/paintings" component={Paintings} />
         <Route path="/" component={Home} />
       </Switch>
-    </div>
+    </main>
   );
 }

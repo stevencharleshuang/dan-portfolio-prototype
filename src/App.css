@@ -48,6 +48,39 @@ header nav li {
   padding: 10px;
 }
 
+main {
+  margin: 100px auto 0;
+}
+
+.about {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.about img {
+  /* border: 5px solid rgba(100, 100, 100, 1); */
+  border-radius: 50%;
+}
+
+.about .content {
+  font-size: 1.4rem;
+  /* justify-self: flex-start; */
+  margin: 0 0 0 40px;
+  text-align: left;
+}
+
+.about #ig {
+  width: 50px;
+  height: auto;
+}
+
+.cv {}
+
+.drawings {}
+
+.paintings {}
+
 a:link, a:visited {
   color: rgba(100, 100, 100, 1); 
   text-decoration: none;

@@ -75,7 +75,27 @@ main {
   height: auto;
 }
 
-.cv {}
+.cv {
+  display: grid;
+  font-size: 1rem;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: auto;
+  justify-items: center;
+  align-items: flex-start;
+}
+
+.cv .left {
+  font-weight: 500;
+  justify-self: right;
+  margin-right: 10px;
+  text-align: right;
+}
+
+.cv .right {
+  justify-self: left;
+  margin-left: 10px;
+  text-align: left;
+}
 
 .drawings {}
 

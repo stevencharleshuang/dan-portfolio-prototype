@@ -1,9 +1,12 @@
 import React from 'react';
+import Logo from './Logo';
+import Nav from './Nav';
 
 export default function Header() {
   return(
     <div>
-      <h1>This is the Header</h1>
+      <Logo />
+      <Nav />
     </div>
   );
 }

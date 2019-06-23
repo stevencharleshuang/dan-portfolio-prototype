@@ -19,6 +19,7 @@ body {
 }
 
 header {
+  padding: 10px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-evenly;
@@ -78,7 +79,7 @@ main {
 .cv {
   display: grid;
   font-size: 1rem;
-  grid-template-columns: 1fr 1fr; 
+  grid-template-columns: 40% 60%; 
   grid-template-rows: auto;
   justify-items: center;
   align-items: flex-start;

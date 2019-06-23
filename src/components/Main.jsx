@@ -10,10 +10,10 @@ export default function Main() {
   return(
     <div>
       <Switch>
-        <Route exact path="about" component={About} />
-        <Route exact path="cv" component={CV} />
-        <Route exact path="drawings" component={Drawings} />
-        <Route exact path="paintings" component={Paintings} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/cv" component={CV} />
+        <Route exact path="/drawings" component={Drawings} />
+        <Route exact path="/paintings" component={Paintings} />
         <Route path="/" component={Home} />
       </Switch>
     </div>

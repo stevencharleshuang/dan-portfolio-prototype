@@ -1,16 +1,43 @@
+/* Header Font */
+/* Accent Font */
+/* Body Font */
+
+html {
+  background: rgba(247, 247, 247, 1);
+}
+
 .App {
   text-align: center;
 }
 
-Header {}
-
-Header .logo {
-
+header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
 }
 
-Header Nav {}
+header .logo {
+  align-self: center;
+}
+
+header nav {
+  
+}
+
+header nav ul {
+  align-self: center;
+  display: flex;
+  flex-flow: row nowrap;
+  list-style: none;
+  padding: 0;
+}
+
+header nav li {
+  padding: 10px;
+}
 
 a:link, a:visited {
+  color: rgba(100, 100, 100, 1); 
   text-decoration: none;
 }
 

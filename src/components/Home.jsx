@@ -1,9 +1,10 @@
 import React from 'react';
+import Hero from '../img/hero.jpg';
 
 export default function Home() {
   return(
     <div className="home">
-      <h1>This is the Home</h1>
+      <img src={Hero} alt="hero" />
     </div>
   );
 }

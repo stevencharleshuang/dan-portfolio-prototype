@@ -2,8 +2,16 @@
 /* Accent Font */
 /* Body Font */
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   background: rgba(247, 247, 247, 1);
+}
+
+body {
+  font-size: 62.5%;
 }
 
 .App {
@@ -17,7 +25,9 @@ header {
 }
 
 header .logo {
-  align-self: center;
+  align-self: baseline;
+  font-size: 2.4rem;
+  font-weight: 600;
 }
 
 header nav {
@@ -25,7 +35,7 @@ header nav {
 }
 
 header nav ul {
-  align-self: center;
+  align-self: baseline;
   display: flex;
   flex-flow: row nowrap;
   list-style: none;
@@ -33,6 +43,8 @@ header nav ul {
 }
 
 header nav li {
+  font-size: 1.4rem;
+  font-weight: 500;
   padding: 10px;
 }
 
@@ -41,4 +53,6 @@ a:link, a:visited {
   text-decoration: none;
 }
 
-a:active, a:hover {}
+a:active, a:hover {
+  color: rgba(100, 100, 100, 0.8); 
+}

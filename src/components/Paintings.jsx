@@ -10,20 +10,88 @@ import P006 from '../img/paintings-006.jpg';
 import P007 from '../img/paintings-007.jpg';
 import P008 from '../img/paintings-008.jpg';
 
+let overlayStyles = {
+  visibility: 'hidden'
+};
+
+const paintingsArr = [
+  {
+    var: P000,
+    title: 'TENNIS'
+  },
+  {
+    var: P001,
+    title: 'HORSE RIDER HOWARD SCHNEIDER'
+  },
+  {
+    var: P002,
+    title: 'FOOT SCRUB'
+  },
+  {
+    var: P003,
+    title: 'TOXIC STEW'
+  },
+  {
+    var: P004,
+    title: 'RED ROSES'
+  },
+  {
+    var: P005,
+    title: 'WITCHER'
+  },
+  {
+    var: P006,
+    title: 'THE SKEPTICISIM OF THE ANGRY MAN LANDED HIM IN A MIRE OF GLOOM AND DOOM'
+  },
+  {
+    var: P007,
+    title: 'BATH SCENE WITH STARVING ANIMAL'
+  },
+  {
+    var: P008,
+    title: 'IN AUTUMN I CUDDLE MY GUN AND TALK TO MY CAT'
+  }
+];
+
 export default class Paintings extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      hovered: '',
       show: false,
-      selection: ''
-    };
+      selection: '',
+      src: ''
+    };    
   };
 
+  handleMouseEnter = (e) => {
+    this.setState({ 
+      hovered: true,
+      src: e.target.src
+    });
+    overlayStyles = {
+      visibility: 'visible'
+    }
+    console.log(e.target, this);
+  }
+  
+  handleMouseLeave = (e) => {
+    this.setState({ 
+      hovered: false,
+      src: ''
+
+    });
+    overlayStyles = {
+      visibility: 'hidden'
+    }
+    console.log(e);
+  }
+
   showModal = (e) => {
-    // console.log(e.target.src);
+    console.log(e.target);
     this.setState({ 
       show: true,
-      selection: e.target.src 
+      selection: this.state.src
     });
   };
 
@@ -33,31 +101,35 @@ export default class Paintings extends React.Component {
 
   render() {
     console.log(this.state);
-    const paintingsArr = [
-      P000,
-      P001,
-      P002,
-      P003,
-      P004,
-      P005,
-      P006,
-      P007,
-      P008
-    ];
 
-    let paintings = paintingsArr.map((painting, i) => {
-    return (
-      <img 
-        src={painting} 
-        alt="painting"
-        onClick={this.showModal} 
-        key={i} />
+    const paintings = paintingsArr.map((painting, i) => {
+      return (
+        <div 
+          className="painting"
+          data-title={painting.title}
+          onClick={this.showModal}
+          onMouseEnter={this.handleMouseEnter} 
+          onMouseLeave={this.handleMouseLeave}
+          key={i}>
+          <img 
+            src={painting.var} 
+            alt="painting"
+            data-title={painting.title} />
+          <div className="overlay" style={overlayStyles}>
+            <span>
+              {painting.title}
+            </span>
+          </div>
+        </div>
       );
     });
     
     return(
       <div className="paintings">
-        {paintings}
+        <div 
+          className="paintings-gallery" >
+          {paintings}
+        </div>
         <Modal show={this.state.show} handleClose={this.hideModal}>
           <img src={this.state.selection} alt="painting" />
         </Modal>

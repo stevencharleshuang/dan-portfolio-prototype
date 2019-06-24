@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Nav() {
   return (
-    <nav>
+    <nav className="noselect">
       <ul>
         <Link to="/paintings"><li>paintings</li></Link>
         <Link to="/drawings"><li>drawings</li></Link>

@@ -84,7 +84,7 @@ export default function CV() {
         </p>
         <p>
           <a href="https://politiken.dk/debat/kritikerskolen/art5474554/To-udstillinger-der-kan-g%C3%B8re-din-weekend-lidt-mindre-komfortabel" target="_blank" rel="noopener noreferrer">
-            “Two ExhibitionsThat Can Make Your Weekend a Little Less Comfortable,”<br />
+            “Two Exhibitions That Can Make Your Weekend a Little Less Comfortable,”<br />
             Politiken October 7, 2013
           </a>
         </p>
@@ -105,7 +105,7 @@ export default function CV() {
         </p>
         <p>
           <a href="https://stormfashion.dk/product/books/dan-schein" target="_blank" rel="noopener noreferrer">
-            stomfashion.dk
+            stormfashion.dk
           </a>
         </p>
       </div>

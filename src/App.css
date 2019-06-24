@@ -22,11 +22,10 @@ header {
   padding: 10px;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 header .logo {
-  align-self: center;
   font-size: 2.4rem;
   font-weight: 600;
 }
@@ -55,20 +54,24 @@ main {
 
 .about {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   justify-content: center;
 }
 
 .about img {
   /* border: 5px solid rgba(100, 100, 100, 1); */
   border-radius: 50%;
+  width: 450px;
+  height: auto;
+  margin: 0 auto;
 }
 
 .about .content {
   font-size: 1.4rem;
   /* justify-self: flex-start; */
-  margin: 0 0 0 40px;
-  text-align: left;
+  /* margin: 0 0 0 40px; */
+  margin: 0 auto;
+  /* text-align: left; */
 }
 
 .about #ig {
@@ -100,7 +103,16 @@ main {
 
 .drawings {}
 
-.paintings {}
+.paintings {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-gap: 5px;
+}
+
+.paintings img {
+  width: 100%;
+  height: auto;
+}
 
 a:link, a:visited {
   color: rgba(100, 100, 100, 1); 
@@ -109,4 +121,30 @@ a:link, a:visited {
 
 a:active, a:hover {
   color: rgba(100, 100, 100, 0.8); 
+}
+
+/* https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting */
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome and Opera */
+}
+
+footer {
+  bottom: 0;
+  display: flex;
+  font-size: 1.2rem;
+  height: 25px;
+  justify-content: flex-end;
+  position: fixed;
+  width: 100%;
+}
+
+footer img {
+  width: 1.2rem;
+  height: auto;
 }

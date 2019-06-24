@@ -156,6 +156,28 @@ a:active, a:hover {
   z-index: 100;
 }
 
+.modal-main img {
+  width: auto;
+  height: 98%;
+}
+
+.modal-btn {
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+  border-radius: 5px;
+  color: white;
+  position: fixed;
+  top: 1%;
+  right: 1%;
+}
+
+.modal-btn:hover {
+  background: white;
+  color: black;
+}
+
 .display-block {
   display: block;
 }
@@ -177,4 +199,8 @@ footer {
 footer img {
   width: 1.2rem;
   height: auto;
+}
+
+.modal-btn:hover {
+  cursor: pointer;
 }

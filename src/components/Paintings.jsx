@@ -14,14 +14,17 @@ export default class Paintings extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      show: false
+      show: false,
+      selection: ''
     };
-    this.showModal = this.showModal.bind(this); 
-    this.hideModal = this.hideModal.bind(this); 
   };
 
-  showModal = () => {
-    this.setState({ show: true });
+  showModal = (e) => {
+    // console.log(e.target.src);
+    this.setState({ 
+      show: true,
+      selection: e.target.src 
+    });
   };
 
   hideModal = () => {
@@ -56,8 +59,7 @@ export default class Paintings extends React.Component {
       <div className="paintings">
         {paintings}
         <Modal show={this.state.show} handleClose={this.hideModal}>
-          <p>Modal</p>
-          <p>Data</p>
+          <img src={this.state.selection} alt="painting" />
         </Modal>
       </div>
     );

@@ -154,7 +154,15 @@ main {
 
 .paintings .paintings-gallery .painting {
   position: relative;
+  z-index: 100;
 }
+
+.paintings img {
+  width: 100%;
+  height: auto;
+  /* z-index: 50; */
+}
+
 
 .paintings .paintings-gallery .painting .overlay {
   position: absolute;
@@ -167,13 +175,9 @@ main {
   justify-content: center;
   color: white;
   font-size: 1.4rem;
-  z-index: 60;
+  /* z-index: -10; */
 }
 
-.paintings img {
-  width: 100%;
-  height: auto;
-}
 
 /* https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting */
 .noselect {
@@ -193,7 +197,7 @@ main {
   width:100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
-  z-index: 90;
+  z-index: 1000;
 }
 
 .modal-main {
@@ -261,7 +265,7 @@ footer img {
   height: auto;
 }
 
-.modal-btn, .paintings-gallery img:hover {
+.modal-btn, .paintings-gallery .painting:hover {
   cursor: pointer;
 }
 

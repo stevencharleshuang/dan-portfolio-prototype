@@ -1,6 +1,5 @@
 import React from 'react';
 import ProfilePic from '../img/profile-pic.jpg';
-import IG from '../img/ig.jpg';
 
 export default function About() {
   return(

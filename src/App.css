@@ -75,11 +75,11 @@ main {
   text-shadow: 1px 1px black;
 }
 
-.App .about .content span .about-links a:link, a:visited {
+.about-links a:link, .about-links a:visited {
   color: rgba(247, 247, 247, 1);
 }
 
-.App .about .content span a:active, a:hover {
+.about-links a:active, .about-links a:hover {
   /* text-shadow: 1px 1px white; */
   color: rgba(180, 180, 180, 1);
 }
@@ -265,11 +265,11 @@ footer img {
   cursor: pointer;
 }
 
-nav, .cv a:link, a:visited {
+/* nav, .cv + a:link, a:visited {
   color: rgba(100, 100, 100, 1); 
   text-decoration: none;
 }
 
-nav, .cv a:active, a:hover {
+nav, .cv + a:active, a:hover {
   color: rgba(100, 100, 100, 0.8); 
-}
+} */

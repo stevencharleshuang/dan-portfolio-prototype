@@ -49,7 +49,7 @@ header nav li {
 }
 
 main {
-  margin: 100px auto 0;
+  /* padding: 7% 0 0; */
 }
 
 .about {
@@ -61,7 +61,7 @@ main {
 .about img {
   /* border: 5px solid rgba(100, 100, 100, 1); */
   border-radius: 50%;
-  width: 450px;
+  width: 25%;
   height: auto;
   margin: 0 auto;
 }
@@ -102,6 +102,11 @@ main {
 }
 
 .drawings {}
+
+.home {
+  background: url('./img/bg-001.jpg') no-repeat fixed center;
+  padding: 5%;
+}
 
 .paintings {
 

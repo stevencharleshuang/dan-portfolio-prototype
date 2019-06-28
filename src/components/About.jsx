@@ -16,9 +16,9 @@ export default function About() {
             Copenhagen, Denmark
           </a>
         </p>
-        <a href="https://www.instagram.com/dan__schein/" target="_blank" rel="noopener noreferrer">
+        {/* <a href="https://www.instagram.com/dan__schein/" target="_blank" rel="noopener noreferrer">
           <img src={IG} alt="instagram" id="ig" />
-        </a>
+        </a> */}
       </div>
     </div>
   );

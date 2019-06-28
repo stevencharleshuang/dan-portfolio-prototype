@@ -15,6 +15,8 @@ body {
 }
 
 .App {
+  position: relative;
+  min-height: 100vh;
   text-align: center;
 }
 
@@ -49,10 +51,11 @@ header nav li {
 }
 
 main {
-  /* padding: 7% 0 0; */
+  padding: 0 0 5%;
 }
 
 .about {
+  padding: 5% 0;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -61,7 +64,7 @@ main {
 .about img {
   /* border: 5px solid rgba(100, 100, 100, 1); */
   border-radius: 50%;
-  width: 25%;
+  width: 20%;
   height: auto;
   margin: 0 auto;
 }
@@ -80,6 +83,7 @@ main {
 }
 
 .cv {
+  padding: 5% 0;
   display: grid;
   font-size: 1rem;
   grid-template-columns: 40% 60%; 
@@ -101,7 +105,9 @@ main {
   text-align: left;
 }
 
-.drawings {}
+.drawings {
+  padding: 5% 0;
+}
 
 .home {
   background: url('./img/bg-001.jpg') no-repeat fixed center;
@@ -109,7 +115,7 @@ main {
 }
 
 .paintings {
-
+  padding: 5% 0;
 }
 
 .paintings-gallery {
@@ -214,17 +220,23 @@ a:active, a:hover {
 }
 
 footer {
+  background: white;
+  padding: 2rem;
   bottom: 0;
   display: flex;
+  position: absolute;
   font-size: 1.2rem;
-  height: 25px;
-  justify-content: flex-end;
-  position: fixed;
+  font-weight: 600;
+  flex-flow: row nowrap;
+  /* height: 25px; */
+  /* text-align: right; */
   width: 100%;
+  justify-content: space-between;
 }
 
 footer img {
-  width: 1.2rem;
+  /* margin: 1%; */
+  width: 1.8rem;
   height: auto;
 }
 

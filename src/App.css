@@ -75,11 +75,11 @@ main {
   text-shadow: 1px 1px black;
 }
 
-.about a:link, a:visited {
+.App .about .content span .about-links a:link, a:visited {
   color: rgba(247, 247, 247, 1);
 }
 
-.about a:active, a:hover {
+.App .about .content span a:active, a:hover {
   /* text-shadow: 1px 1px white; */
   color: rgba(180, 180, 180, 1);
 }
@@ -263,4 +263,13 @@ footer img {
 
 .modal-btn, .paintings-gallery img:hover {
   cursor: pointer;
+}
+
+nav, .cv a:link, a:visited {
+  color: rgba(100, 100, 100, 1); 
+  text-decoration: none;
+}
+
+nav, .cv a:active, a:hover {
+  color: rgba(100, 100, 100, 0.8); 
 }

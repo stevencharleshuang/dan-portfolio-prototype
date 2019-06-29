@@ -53,7 +53,6 @@ export default class Paintings extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hovered: '',
       show: false,
       selection: '',
       src: '',
@@ -62,11 +61,11 @@ export default class Paintings extends React.Component {
   };
 
   handleMouseEnter = (e) => {
+    let src = e.target.dataset.src;
     let target = e.target.style;
     let nextElSib = e.target.nextElementSibling;
     this.setState({ 
-      hovered: true,
-      src: e.target.src,
+      src,
       target: e.target
     });
     if (!!target) target.style = "z-index: -50;";
@@ -79,7 +78,6 @@ export default class Paintings extends React.Component {
     if (!!target) target.style = "z-index: 50;";
     if (!!nextElSib) nextElSib.style = "z-index: -10;";
     this.setState({ 
-      hovered: false,
       src: '',
       target: ''
     });
@@ -113,10 +111,12 @@ export default class Paintings extends React.Component {
             src={painting.var} 
             alt="painting"
             style={{ zIndex: "50" }}
+            data-src={painting.var}
             data-title={painting.title} />
           <div 
             className="overlay"
             style={{ zIndex: "-10" }}
+            data-src={painting.var}
             data-title={painting.title}>
             <span>
               {painting.title}

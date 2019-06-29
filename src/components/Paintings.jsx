@@ -102,6 +102,7 @@ export default class Paintings extends React.Component {
       return (
         <div 
           className="painting"
+          data-src={painting.var}
           data-title={painting.title}
           onClick={this.showModal}
           onMouseEnter={this.handleMouseEnter} 

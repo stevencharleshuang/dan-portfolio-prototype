@@ -10,10 +10,6 @@ import P006 from '../img/paintings-006.jpg';
 import P007 from '../img/paintings-007.jpg';
 import P008 from '../img/paintings-008.jpg';
 
-let overlayStyles = {
-  visibility: 'hidden'
-};
-
 const paintingsArr = [
   {
     var: P000,
@@ -57,38 +53,37 @@ export default class Paintings extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hovered: '',
       show: false,
       selection: '',
-      src: ''
+      src: '',
+      target: ''
     };    
   };
 
   handleMouseEnter = (e) => {
+    let src = e.target.dataset.src;
+    let target = e.target.style;
+    let nextElSib = e.target.nextElementSibling;
     this.setState({ 
-      hovered: true,
-      src: e.target.src
+      src,
+      target: e.target
     });
-    overlayStyles = {
-      visibility: 'visible'
-    }
-    console.log(e.target, this);
+    if (!!target) target.style = "z-index: -50;";
+    if (!!nextElSib) nextElSib.style = "z-index: 10;";
   }
   
   handleMouseLeave = (e) => {
+    let target = e.target.style;
+    let nextElSib = this.state.target.nextElementSibling;
+    if (!!target) target.style = "z-index: 50;";
+    if (!!nextElSib) nextElSib.style = "z-index: -10;";
     this.setState({ 
-      hovered: false,
-      src: ''
-
+      src: '',
+      target: ''
     });
-    overlayStyles = {
-      visibility: 'hidden'
-    }
-    console.log(e);
   }
 
   showModal = (e) => {
-    console.log(e.target);
     this.setState({ 
       show: true,
       selection: this.state.src
@@ -96,16 +91,18 @@ export default class Paintings extends React.Component {
   };
 
   hideModal = () => {
-    this.setState({ show: false });
+    this.setState({ 
+      show: false,
+      selection: ''
+    });
   };
 
   render() {
-    console.log(this.state);
-
     const paintings = paintingsArr.map((painting, i) => {
       return (
         <div 
           className="painting"
+          data-src={painting.var}
           data-title={painting.title}
           onClick={this.showModal}
           onMouseEnter={this.handleMouseEnter} 
@@ -114,8 +111,14 @@ export default class Paintings extends React.Component {
           <img 
             src={painting.var} 
             alt="painting"
+            style={{ zIndex: "50" }}
+            data-src={painting.var}
             data-title={painting.title} />
-          <div className="overlay" style={overlayStyles}>
+          <div 
+            className="overlay"
+            style={{ zIndex: "-10" }}
+            data-src={painting.var}
+            data-title={painting.title}>
             <span>
               {painting.title}
             </span>

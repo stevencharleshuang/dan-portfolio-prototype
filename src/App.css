@@ -14,6 +14,15 @@ body {
   font-size: 62.5%;
 }
 
+a:link, a:visited {
+  color: rgba(100, 100, 100, 1); 
+  text-decoration: none;
+}
+
+a:active, a:hover {
+  color: rgba(100, 100, 100, 0.8); 
+}
+
 .App {
   height: 100%;
   min-height: 100vh;
@@ -60,6 +69,19 @@ main {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
+  background: url('./img/bg-002.jpg') no-repeat fixed center;
+  background-size: cover;
+  color: white;
+  text-shadow: 1px 1px black;
+}
+
+.about-links a:link, .about-links a:visited {
+  color: rgba(247, 247, 247, 1);
+}
+
+.about-links a:active, .about-links a:hover {
+  /* text-shadow: 1px 1px white; */
+  color: rgba(180, 180, 180, 1);
 }
 
 .about img {
@@ -132,9 +154,20 @@ main {
 
 .paintings .paintings-gallery .painting {
   position: relative;
+  z-index: 100;
 }
 
+.paintings img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  /* overflow: hidden; */
+  /* z-index: 50; */
+}
+
+
 .paintings .paintings-gallery .painting .overlay {
+  padding: 2%;
   position: absolute;
   top: 0;
   width: 100%;
@@ -145,22 +178,9 @@ main {
   justify-content: center;
   color: white;
   font-size: 1.4rem;
-  z-index: 60;
+  /* z-index: -10; */
 }
 
-.paintings img {
-  width: 100%;
-  height: auto;
-}
-
-a:link, a:visited {
-  color: rgba(100, 100, 100, 1); 
-  text-decoration: none;
-}
-
-a:active, a:hover {
-  color: rgba(100, 100, 100, 0.8); 
-}
 
 /* https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting */
 .noselect {
@@ -180,7 +200,7 @@ a:active, a:hover {
   width:100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
-  z-index: 90;
+  z-index: 1000;
 }
 
 .modal-main {
@@ -248,6 +268,15 @@ footer img {
   height: auto;
 }
 
-.modal-btn, .paintings-gallery img:hover {
+.modal-btn, .paintings-gallery .painting:hover {
   cursor: pointer;
 }
+
+/* nav, .cv + a:link, a:visited {
+  color: rgba(100, 100, 100, 1); 
+  text-decoration: none;
+}
+
+nav, .cv + a:active, a:hover {
+  color: rgba(100, 100, 100, 0.8); 
+} */

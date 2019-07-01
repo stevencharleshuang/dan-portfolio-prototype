@@ -55,6 +55,7 @@ export default class Paintings extends React.Component {
     this.state = {
       show: false,
       selection: '',
+      selectionTitle: '',
       src: '',
       target: ''
     };    
@@ -86,7 +87,8 @@ export default class Paintings extends React.Component {
   showModal = (e) => {
     this.setState({ 
       show: true,
-      selection: this.state.src
+      selection: this.state.src,
+      selectionTitle: e.target.dataset.title
     });
   };
 
@@ -101,7 +103,7 @@ export default class Paintings extends React.Component {
     const paintings = paintingsArr.map((painting, i) => {
       return (
         <div 
-          className="painting"
+          className="painting noselect"
           data-src={painting.var}
           data-title={painting.title}
           onClick={this.showModal}
@@ -115,7 +117,7 @@ export default class Paintings extends React.Component {
             data-src={painting.var}
             data-title={painting.title} />
           <div 
-            className="overlay"
+            className="overlay noselect"
             style={{ zIndex: "-10" }}
             data-src={painting.var}
             data-title={painting.title}>
@@ -127,14 +129,18 @@ export default class Paintings extends React.Component {
       );
     });
     
+    console.log(this.state);
     return(
       <div className="paintings">
         <div 
           className="paintings-gallery" >
           {paintings}
         </div>
-        <Modal show={this.state.show} handleClose={this.hideModal}>
+        <Modal 
+          show={this.state.show} 
+          handleClose={this.hideModal}>
           <img src={this.state.selection} alt="painting" />
+          {this.state.selectionTitle}
         </Modal>
       </div>
     );

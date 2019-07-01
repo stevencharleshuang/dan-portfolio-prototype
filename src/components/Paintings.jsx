@@ -53,6 +53,8 @@ export default class Paintings extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      next: '',
+      prev: '',
       show: false,
       selection: '',
       selectionTitle: '',
@@ -88,7 +90,9 @@ export default class Paintings extends React.Component {
     this.setState({ 
       show: true,
       selection: this.state.src,
-      selectionTitle: e.target.dataset.title
+      selectionTitle: e.target.dataset.title,
+      next: e.target.dataset.next,
+      prev: e.target.dataset.prev
     });
   };
 
@@ -99,6 +103,17 @@ export default class Paintings extends React.Component {
     });
   };
 
+  handleModalLBtnClick = (e) => {
+    console.log('Modal left button click! >>>', e.target);
+    this.setState({
+      selection: this.state.prev
+    }) 
+  }
+
+  handleModalRBtnClick = (e) => {
+    console.log('Modal right button click!', e);
+  }
+
   render() {
     const paintings = paintingsArr.map((painting, i) => {
       return (
@@ -106,21 +121,27 @@ export default class Paintings extends React.Component {
           className="painting noselect"
           data-src={painting.var}
           data-title={painting.title}
+          data-next={paintingsArr[i + 1] ? paintingsArr[i + 1].var : null}
+          data-prev={paintingsArr[i - 1] ? paintingsArr[i - 1].var : null}
           onClick={this.showModal}
           onMouseEnter={this.handleMouseEnter} 
           onMouseLeave={this.handleMouseLeave}
-          key={i}>
+          key={i} >
           <img 
             src={painting.var} 
             alt="painting"
             style={{ zIndex: "50" }}
             data-src={painting.var}
-            data-title={painting.title} />
+            data-title={painting.title}
+            data-next={paintingsArr[i + 1] ? paintingsArr[i + 1].var : null}
+            data-prev={paintingsArr[i - 1] ? paintingsArr[i - 1].var : null} />
           <div 
             className="overlay noselect"
             style={{ zIndex: "-10" }}
             data-src={painting.var}
-            data-title={painting.title}>
+            data-title={painting.title}
+            data-next={paintingsArr[i + 1] ? paintingsArr[i + 1].var : null}
+            data-prev={paintingsArr[i - 1] ? paintingsArr[i - 1].var : null}>
             <span>
               {painting.title}
             </span>
@@ -142,6 +163,8 @@ export default class Paintings extends React.Component {
           gallery={paintingsArr}
           title={this.state.selectionTitle}
           src={this.state.selection}
+          handleModalLBtnClick={this.handleModalLBtnClick}
+          handleModalRBtnClick={this.handleModalRBtnClick}
           >
           <img src={this.state.selection} alt="painting" />
           {this.state.selectionTitle}

@@ -138,7 +138,11 @@ export default class Paintings extends React.Component {
         </div>
         <Modal 
           show={this.state.show} 
-          handleClose={this.hideModal}>
+          handleClose={this.hideModal}
+          gallery={paintingsArr}
+          title={this.state.selectionTitle}
+          src={this.state.selection}
+          >
           <img src={this.state.selection} alt="painting" />
           {this.state.selectionTitle}
         </Modal>

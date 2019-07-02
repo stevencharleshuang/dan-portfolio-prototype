@@ -3,13 +3,10 @@ import React from 'react';
 export default function Modal({ 
     handleClose, 
     show, 
-    gallery, 
     title, 
     src, 
     handleModalLBtnClick, 
-    handleModalRBtnClick, 
-    prev,
-    next 
+    handleModalRBtnClick
   }) {
   const showHideClassName = show ? "modal display-block" : "modal display-none";
 
@@ -20,18 +17,14 @@ export default function Modal({
           src={src} 
           alt={title} />
         <button className="modal-btn modal-btn-close" onClick={handleClose}>x</button>
-        {!!prev ? 
           <button 
             className="modal-btn modal-btn-left"
             onClick = {handleModalLBtnClick}
-            >{'<'}</button> :
-            null}
-        {!!next ?
+            >{'<'}</button>
           <button 
             className="modal-btn modal-btn-right"
             onClick = {handleModalRBtnClick}
-            >{'>'}</button> :
-            null}
+            >{'>'}</button>
       </section>
     </div>
   );

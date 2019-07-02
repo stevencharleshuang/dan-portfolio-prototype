@@ -54,8 +54,6 @@ export default class Paintings extends React.Component {
     super(props);
     this.state = {
       index: 0,
-      next: '',
-      prev: '',
       show: false,
       selection: '',
       selectionTitle: '',
@@ -90,14 +88,10 @@ export default class Paintings extends React.Component {
 
   showModal = (e) => {
     let index = parseInt(this.state.index);
-    let next = paintingsArr[index + 1].url;
-    let prev = paintingsArr[index - 1].url;
     this.setState({ 
       show: true,
       selection: this.state.src,
       selectionTitle: e.target.dataset.title,
-      next,
-      prev
     });
   };
 
@@ -111,20 +105,16 @@ export default class Paintings extends React.Component {
   handleModalLBtnClick = () => {
     let index = parseInt(this.state.index) - 1;
     if (index < 0) index = paintingsArr.length - 1;
-    console.log('Modal left button click! >>>');
     this.setState({
       index,
-      selection: this.state.prev
     }); 
   }
 
   handleModalRBtnClick = () => {
     let index = parseInt(this.state.index) + 1;
     if (index > paintingsArr.length - 1) index = 0;
-    console.log('Modal right button click!');
     this.setState({
       index,
-      selection: this.state.next
     });
   }
 
@@ -136,8 +126,6 @@ export default class Paintings extends React.Component {
           data-src={painting.url}
           data-index={i}
           data-title={painting.title}
-          data-next={paintingsArr[i + 1] ? paintingsArr[i + 1].url : null}
-          data-prev={paintingsArr[i - 1] ? paintingsArr[i - 1].url : null}
           onClick={this.showModal}
           onMouseEnter={this.handleMouseEnter} 
           onMouseLeave={this.handleMouseLeave}
@@ -149,16 +137,12 @@ export default class Paintings extends React.Component {
             data-index={i}
             data-src={painting.url}
             data-title={painting.title}
-            data-next={paintingsArr[i + 1] ? paintingsArr[i + 1].url : null}
-            data-prev={paintingsArr[i - 1] ? paintingsArr[i - 1].url : null} 
             />
           <div 
             className="overlay noselect"
             style={{ zIndex: "-10" }}
             data-src={painting.url}
             data-title={painting.title}
-            data-next={paintingsArr[i + 1] ? paintingsArr[i + 1].url : null}
-            data-prev={paintingsArr[i - 1] ? paintingsArr[i - 1].url : null}
             >
             <span>
               {painting.title}
@@ -167,8 +151,7 @@ export default class Paintings extends React.Component {
         </div>
       );
     });
-    
-    console.log(this.state);
+
     return(
       <div className="paintings">
         <div 
@@ -182,10 +165,7 @@ export default class Paintings extends React.Component {
           title={this.state.selectionTitle}
           src={paintingsArr[this.state.index].url}
           handleModalLBtnClick={this.handleModalLBtnClick}
-          handleModalRBtnClick={this.handleModalRBtnClick}
-          prev={this.state.prev}
-          next={this.state.next}
-          >
+          handleModalRBtnClick={this.handleModalRBtnClick}>
           <img src={this.state.selection} alt="painting" />
           {this.state.selectionTitle}
         </Modal>

@@ -110,6 +110,7 @@ export default class Paintings extends React.Component {
 
   handleModalLBtnClick = () => {
     let index = parseInt(this.state.index) - 1;
+    if (index < 0) index = paintingsArr.length - 1;
     console.log('Modal left button click! >>>');
     this.setState({
       index,
@@ -119,6 +120,7 @@ export default class Paintings extends React.Component {
 
   handleModalRBtnClick = () => {
     let index = parseInt(this.state.index) + 1;
+    if (index > paintingsArr.length - 1) index = 0;
     console.log('Modal right button click!');
     this.setState({
       index,

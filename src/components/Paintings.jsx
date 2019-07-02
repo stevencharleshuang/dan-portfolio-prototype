@@ -55,20 +55,15 @@ export default class Paintings extends React.Component {
     this.state = {
       index: 0,
       show: false,
-      selection: '',
-      selectionTitle: '',
-      src: '',
       target: ''
     };    
   };
 
   handleMouseEnter = (e) => {
-    let src = e.target.dataset.src;
     let target = e.target.style;
     let nextElSib = e.target.nextElementSibling;
     this.setState({
       index: parseInt(e.target.dataset.index), 
-      src,
       target: e.target
     });
     if (!!target) target.style = "z-index: -50;";
@@ -81,24 +76,19 @@ export default class Paintings extends React.Component {
     if (!!target) target.style = "z-index: 50;";
     if (!!nextElSib) nextElSib.style = "z-index: -10;";
     this.setState({ 
-      src: '',
       target: ''
     });
   }
 
-  showModal = (e) => {
-    let index = parseInt(this.state.index);
+  showModal = () => {
     this.setState({ 
       show: true,
-      selection: this.state.src,
-      selectionTitle: e.target.dataset.title,
     });
   };
 
   hideModal = () => {
     this.setState({ 
       show: false,
-      selection: ''
     });
   };
 
@@ -123,7 +113,6 @@ export default class Paintings extends React.Component {
       return (
         <div 
           className="painting noselect"
-          data-src={painting.url}
           data-index={i}
           data-title={painting.title}
           onClick={this.showModal}
@@ -135,13 +124,11 @@ export default class Paintings extends React.Component {
             alt="painting"
             style={{ zIndex: "50" }}
             data-index={i}
-            data-src={painting.url}
             data-title={painting.title}
             />
           <div 
             className="overlay noselect"
             style={{ zIndex: "-10" }}
-            data-src={painting.url}
             data-title={painting.title}
             >
             <span>
@@ -161,13 +148,10 @@ export default class Paintings extends React.Component {
         <Modal 
           show={this.state.show} 
           handleClose={this.hideModal}
-          gallery={paintingsArr}
-          title={this.state.selectionTitle}
+          title={paintingsArr[this.state.index].title}
           src={paintingsArr[this.state.index].url}
           handleModalLBtnClick={this.handleModalLBtnClick}
           handleModalRBtnClick={this.handleModalRBtnClick}>
-          <img src={this.state.selection} alt="painting" />
-          {this.state.selectionTitle}
         </Modal>
       </div>
     );

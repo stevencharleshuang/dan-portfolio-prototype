@@ -62,10 +62,12 @@ export default class Paintings extends React.Component {
   handleMouseEnter = (e) => {
     let target = e.target.style;
     let nextElSib = e.target.nextElementSibling;
+
     this.setState({
       index: parseInt(e.target.dataset.index), 
       target: e.target
     });
+    // Show the title over the work
     if (!!target) target.style = "z-index: -50;";
     if (!!nextElSib) nextElSib.style = "z-index: 10;";
   }
@@ -73,8 +75,10 @@ export default class Paintings extends React.Component {
   handleMouseLeave = (e) => {
     let target = e.target.style;
     let nextElSib = this.state.target.nextElementSibling;
+    // Hide the title under the work
     if (!!target) target.style = "z-index: 50;";
     if (!!nextElSib) nextElSib.style = "z-index: -10;";
+
     this.setState({ 
       target: ''
     });
@@ -94,7 +98,9 @@ export default class Paintings extends React.Component {
 
   handleModalLBtnClick = () => {
     let index = parseInt(this.state.index) - 1;
+    // Logic for round robin navigation in Modal
     if (index < 0) index = paintingsArr.length - 1;
+    
     this.setState({
       index,
     }); 
@@ -102,10 +108,16 @@ export default class Paintings extends React.Component {
 
   handleModalRBtnClick = () => {
     let index = parseInt(this.state.index) + 1;
+    // Logic for round robin navigation in Modal
     if (index > paintingsArr.length - 1) index = 0;
+
     this.setState({
       index,
     });
+  }
+  // ToDo: Implement Keystroke controls for modal image navigation
+  handleKeyPress = () => {
+    console.log('detected keystroke');
   }
 
   render() {
@@ -145,7 +157,7 @@ export default class Paintings extends React.Component {
           className="paintings-gallery" >
           {paintings}
         </div>
-        <Modal 
+        <Modal
           show={this.state.show} 
           handleClose={this.hideModal}
           title={paintingsArr[this.state.index].title}

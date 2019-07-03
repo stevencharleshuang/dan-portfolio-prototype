@@ -149,7 +149,7 @@ main {
 .paintings-gallery {
   display: grid;
   grid-template-columns: 33% 33% 33%;
-  grid-gap: 5px;
+  /* grid-gap: 5px; */
 }
 
 .paintings .paintings-gallery .painting {
@@ -197,7 +197,7 @@ main {
   left: 0;
   width:100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.9);
   z-index: 1000;
 }
 
@@ -214,9 +214,10 @@ main {
 }
 
 .modal-main img {
-  position:fixed;
-  top: auto;
-  left: 40vh;
+  margin: 0 auto;
+  /* position:fixed; */
+  /* top: auto; */
+  /* left: 40vh; */
   width: auto;
   height: 98%;
 }

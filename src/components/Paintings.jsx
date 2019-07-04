@@ -95,6 +95,7 @@ export default class Paintings extends React.Component {
             className="overlay noselect"
             style={{ zIndex: "-10" }}
             data-title={painting.title}
+            data-index={i}
             >
             <span>
               {painting.title}

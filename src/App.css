@@ -129,12 +129,13 @@ main {
 }
 
 .drawings {
-  padding: 5% 0;
+  padding: 5% 0 0;
 }
 
 .drawings-gallery {
   display: grid;
   grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 40% repeat(auto-fill, 40%);
   /* grid-gap: 5px; */
 }
 
@@ -147,6 +148,7 @@ main {
   object-fit: cover;
   width: 100%;
   height: 100%;
+  /* overflow: hidden; */
 }
 
 .drawings .drawings-gallery .drawing .overlay {
@@ -182,6 +184,7 @@ main {
 .paintings-gallery {
   display: grid;
   grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 40% repeat(auto-fill, 40%);
   /* grid-gap: 5px; */
 }
 

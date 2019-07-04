@@ -74,6 +74,8 @@ export default class Drawings extends React.Component {
   }
 
   render() {
+    console.log('state', this.state)
+
     const drawings = drawingsArr.map((drawing, i) => {
       return (
         <div 
@@ -95,6 +97,7 @@ export default class Drawings extends React.Component {
             className="overlay noselect"
             style={{ zIndex: "-10" }}
             data-title={drawing.title}
+            data-index={i}
             >
             <span>
               {drawing.title}

@@ -14,7 +14,8 @@ export default function Main() {
         <Route path="/cv" component={CV} />
         <Route path="/drawings" component={Drawings} />
         <Route path="/paintings" component={Paintings} />
-        <Route exact path="/*" component={Home} />
+        <Route exact path="/" component={Home} />
+        <Route component={Home} />
       </Switch>
     </main>
   );

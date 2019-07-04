@@ -83,20 +83,18 @@ export default class Paintings extends React.Component {
           onClick={this.showModal}
           onMouseEnter={this.handleMouseEnter} 
           onMouseLeave={this.handleMouseLeave}
-          key={i} >
+          key={i}>
           <img 
             src={painting.url} 
             alt="painting"
             style={{ zIndex: "50" }}
             data-index={i}
-            data-title={painting.title}
-            />
+            data-title={painting.title} />
           <div 
             className="overlay noselect"
             style={{ zIndex: "-10" }}
             data-title={painting.title}
-            data-index={i}
-            >
+            data-index={i}>
             <span>
               {painting.title}
             </span>
@@ -109,7 +107,7 @@ export default class Paintings extends React.Component {
       <div className="paintings">
         <div 
           className="paintings-gallery" >
-          {paintings}
+            {paintings}
         </div>
         <Modal
           show={this.state.show} 

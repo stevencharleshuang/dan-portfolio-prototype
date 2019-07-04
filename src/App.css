@@ -149,7 +149,7 @@ main {
 .paintings-gallery {
   display: grid;
   grid-template-columns: 33% 33% 33%;
-  grid-gap: 5px;
+  /* grid-gap: 5px; */
 }
 
 .paintings .paintings-gallery .painting {
@@ -161,12 +161,10 @@ main {
   object-fit: cover;
   width: 100%;
   height: 100%;
-  /* overflow: hidden; */
-  /* z-index: 50; */
 }
 
-
 .paintings .paintings-gallery .painting .overlay {
+  text-transform: uppercase;
   padding: 2%;
   position: absolute;
   top: 0;
@@ -199,7 +197,7 @@ main {
   left: 0;
   width:100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.9);
   z-index: 1000;
 }
 
@@ -216,20 +214,43 @@ main {
 }
 
 .modal-main img {
+  margin: 0 auto;
+  /* position:fixed; */
+  /* top: auto; */
+  /* left: 40vh; */
   width: auto;
   height: 98%;
 }
 
 .modal-btn {
-  width: 40px;
-  height: 40px;
   background: rgba(0, 0, 0, 0.2);
-  font-size: 1.2rem;
   border-radius: 5px;
   color: white;
   position: fixed;
+}
+
+.modal-btn-close {
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
   top: 1%;
   right: 1%;
+}
+
+.modal-btn-left {
+  width: 50px;
+  height: 50px;
+  font-size: 1.6rem;
+  left: 1%;
+  top: 50vh;
+}
+
+.modal-btn-right {
+  font-size: 1.6rem;
+  width: 50px;
+  height: 50px;
+  right: 1%;
+  top: 50vh;
 }
 
 .modal-btn:hover {

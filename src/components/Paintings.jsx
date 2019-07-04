@@ -102,12 +102,11 @@ export default class Paintings extends React.Component {
         </div>
       );
     });
-
     return(
       <div className="paintings">
         <div 
           className="paintings-gallery" >
-            {paintings}
+          {paintings}
         </div>
         <Modal
           show={this.state.show} 

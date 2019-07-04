@@ -91,14 +91,12 @@ export default class Drawings extends React.Component {
             alt="drawing"
             style={{ zIndex: "50" }}
             data-index={i}
-            data-title={drawing.title}
-            />
+            data-title={drawing.title} />
           <div 
             className="overlay noselect"
             style={{ zIndex: "-10" }}
             data-title={drawing.title}
-            data-index={i}
-            >
+            data-index={i} >
             <span>
               {drawing.title}
             </span>

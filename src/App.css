@@ -132,6 +132,39 @@ main {
   padding: 5% 0;
 }
 
+.drawings-gallery {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  /* grid-gap: 5px; */
+}
+
+.drawings .drawings-gallery .drawing {
+  position: relative;
+  z-index: 100;
+}
+
+.drawings img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.drawings .drawings-gallery .drawing .overlay {
+  text-transform: uppercase;
+  padding: 2%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  color: white;
+  font-size: 1.4rem;
+  /* z-index: -10; */
+}
+
 .home {
   background: url('./img/bg-001.jpg') no-repeat fixed center;
   padding: 5% 0;

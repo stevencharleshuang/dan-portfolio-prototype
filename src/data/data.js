@@ -7,6 +7,12 @@ import P005 from '../img/paintings-005.jpg';
 import P006 from '../img/paintings-006.jpg';
 import P007 from '../img/paintings-007.jpg';
 import P008 from '../img/paintings-008.jpg';
+import D000 from '../img/drawings-000.jpg';
+import D001 from '../img/drawings-001.jpg';
+import D002 from '../img/drawings-002.jpg';
+import D003 from '../img/drawings-003.jpg';
+import D004 from '../img/drawings-004.jpg';
+import D005 from '../img/drawings-005.jpg';
 
 export const paintingsArr = [
   {
@@ -44,5 +50,32 @@ export const paintingsArr = [
   {
     url: P008,
     title: 'IN AUTUMN I CUDDLE MY GUN AND TALK TO MY CAT'
+  }
+];
+
+export const drawingsArr = [
+  {
+    url: D000,
+    title: 'EVIL DONKEY MAN'
+  },
+  {
+    url: D001,
+    title: 'ABYSMAL LANDSCAPE FUNERAL PROCESSION'
+  },
+  {
+    url: D002,
+    title: 'OUTRAGE'
+  },
+  {
+    url: D003,
+    title: 'ABYSMAL LANDSCAPE BOAT'
+  },
+  {
+    url: D004,
+    title: 'RATS'
+  },
+  {
+    url: D005,
+    title: 'CART OF SAD'
   }
 ];

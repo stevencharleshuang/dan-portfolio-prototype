@@ -5,6 +5,7 @@ import CV from './CV';
 import Drawings from './Drawings';
 import Home from './Home';
 import Paintings from './Paintings';
+import Unmatched from './Unmatched';
 
 export default function Main() {
   return(
@@ -15,7 +16,7 @@ export default function Main() {
         <Route path="/drawings" component={Drawings} />
         <Route path="/paintings" component={Paintings} />
         <Route exact path="/" component={Home} />
-        <Route component={Home} />
+        <Route component={Unmatched} />
       </Switch>
     </main>
   );

@@ -1,6 +1,9 @@
-/home              /
+# Request          Serve          Code
+/test              /
 /paintings         /
 /drawings          /
 /cv                /
 /about             /
-/*                 /unmatched
+/*                 /index.html    200
+
+

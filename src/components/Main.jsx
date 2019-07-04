@@ -10,11 +10,11 @@ export default function Main() {
   return(
     <main>
       <Switch>
-        <Route exact path="/about" component={About} />
-        <Route exact path="/cv" component={CV} />
-        <Route exact path="/drawings" component={Drawings} />
-        <Route exact path="/paintings" component={Paintings} />
-        <Route path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/cv" component={CV} />
+        <Route path="/drawings" component={Drawings} />
+        <Route path="/paintings" component={Paintings} />
+        <Route exact path="/*" component={Home} />
       </Switch>
     </main>
   );

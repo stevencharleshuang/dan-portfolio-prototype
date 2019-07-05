@@ -110,9 +110,12 @@ export default class Paintings extends React.Component {
         </div>
         <Modal
           show={this.state.show} 
-          handleClose={this.hideModal}
-          title={paintingsArr[this.state.index].title}
           src={paintingsArr[this.state.index].url}
+          title={paintingsArr[this.state.index].title}
+          date={paintingsArr[this.state.index].date}
+          medium={paintingsArr[this.state.index].medium}
+          dimensions={paintingsArr[this.state.index].dimensions}
+          handleClose={this.hideModal}
           handleModalLBtnClick={this.handleModalLBtnClick}
           handleModalRBtnClick={this.handleModalRBtnClick}>
         </Modal>

@@ -2,8 +2,11 @@ import React from 'react';
 
 export default function Modal({ 
   show, 
-  title, 
   src, 
+  title,
+  date,
+  medium,
+  dimensions, 
   handleClose, 
   handleModalLBtnClick, 
   handleModalRBtnClick
@@ -18,6 +21,14 @@ export default function Modal({
           src={src} 
           alt={title} 
           onClick={handleModalRBtnClick} />
+        <div className="modal-info">
+            <h1>{title}</h1>
+            <p>  
+              {date}<br />
+              {medium}<br />
+              {dimensions}<br />
+            </p>
+        </div>
         <button 
           className="modal-btn modal-btn-close" 
           onClick={handleClose}>x</button>

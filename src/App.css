@@ -249,6 +249,24 @@ main {
   z-index: 100;
 }
 
+.modal .modal-info {
+  position: fixed;
+  top: 1%;
+  left: 1%;
+  max-width: 30%;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  border-radius: 5px;
+}
+
+.modal .modal-info h1 {
+  font-size: 1.4rem;
+}
+
+.modal .modal-info p {
+  font-size: 1.2rem;
+}
 .modal-main img {
   /* position:fixed; */
   /* top: auto; */

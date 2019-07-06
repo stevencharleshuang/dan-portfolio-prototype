@@ -33,7 +33,7 @@ export default function Modal({
                 {dimensions}<br />
               </p>
           </div> :
-          <div className="modal-info-btn" onMouseEnter={handleModalInfoMouseEnter}>
+          <div className="modal-btn modal-info-btn" onMouseEnter={handleModalInfoMouseEnter}>
             i
           </div>
         }

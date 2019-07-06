@@ -268,7 +268,7 @@ main {
   left: 1%;
   max-width: 30%;
   padding: 10px;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8);
   color: white;
   border-radius: 5px;
 }
@@ -359,7 +359,9 @@ footer img:hover {
 }
 
 .modal-btn, 
-.paintings-gallery .painting:hover {
+.paintings-gallery .painting:hover,
+.modal .modal-info,
+.modal .modal-info-btn {
   cursor: pointer;
 }
 

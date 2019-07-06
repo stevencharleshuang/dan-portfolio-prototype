@@ -359,9 +359,9 @@ footer img:hover {
 }
 
 .modal-btn, 
+.drawings-gallery .drawing:hover,
 .paintings-gallery .painting:hover,
-.modal .modal-info,
-.modal .modal-info-btn {
+.modal .modal-info {
   cursor: pointer;
 }
 

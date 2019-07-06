@@ -8,6 +8,7 @@ export default class Paintings extends React.Component {
     this.state = {
       index: 0,
       show: false,
+      showInfo: false,
       target: ''
     };    
   };
@@ -48,6 +49,16 @@ export default class Paintings extends React.Component {
       show: false,
     });
   };
+
+  handleModalInfoMouseEnter = () => {
+    console.log('mouseEnter Info');
+    this.setState({ showInfo: true });
+  }
+  
+  handleModalInfoMouseLeave = () => {
+    console.log('mouseLeave Info');
+    this.setState({ showInfo: false });
+  }
 
   handleModalLBtnClick = () => {
     let index = parseInt(this.state.index) - 1;
@@ -109,10 +120,16 @@ export default class Paintings extends React.Component {
           {paintings}
         </div>
         <Modal
-          show={this.state.show} 
-          handleClose={this.hideModal}
-          title={paintingsArr[this.state.index].title}
+          show={this.state.show}
+          showInfo={this.state.showInfo} 
           src={paintingsArr[this.state.index].url}
+          title={paintingsArr[this.state.index].title}
+          date={paintingsArr[this.state.index].date}
+          medium={paintingsArr[this.state.index].medium}
+          dimensions={paintingsArr[this.state.index].dimensions}
+          handleClose={this.hideModal}
+          handleModalInfoMouseEnter={this.handleModalInfoMouseEnter}
+          handleModalInfoMouseLeave={this.handleModalInfoMouseLeave}
           handleModalLBtnClick={this.handleModalLBtnClick}
           handleModalRBtnClick={this.handleModalRBtnClick}>
         </Modal>

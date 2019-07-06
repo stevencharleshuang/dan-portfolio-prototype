@@ -1,10 +1,16 @@
 import React from 'react';
 
 export default function Modal({ 
-  show, 
-  title, 
+  show,
+  showInfo, 
   src, 
-  handleClose, 
+  title,
+  date,
+  medium,
+  dimensions, 
+  handleClose,
+  handleModalInfoMouseEnter, 
+  handleModalInfoMouseLeave, 
   handleModalLBtnClick, 
   handleModalRBtnClick
 }) {
@@ -18,6 +24,19 @@ export default function Modal({
           src={src} 
           alt={title} 
           onClick={handleModalRBtnClick} />
+        {!!showInfo ?
+          <div className="modal-info" onMouseLeave={handleModalInfoMouseLeave}>
+              <h1>{title}</h1>
+              <p>  
+                {date}<br />
+                {medium}<br />
+                {dimensions}<br />
+              </p>
+          </div> :
+          <div className="modal-btn modal-info-btn" onMouseEnter={handleModalInfoMouseEnter}>
+            i
+          </div>
+        }
         <button 
           className="modal-btn modal-btn-close" 
           onClick={handleClose}>x</button>

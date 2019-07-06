@@ -17,65 +17,110 @@ import D005 from '../img/drawings-005.jpg';
 export const paintingsArr = [
   {
     url: P000,
-    title: 'TENNIS'
+    title: 'TENNIS',
+    date: '2018',
+    medium: 'Oil on canvas',
+    dimensions: ``
   },
   {
     url: P001,
-    title: 'HORSE RIDER HOWARD SCHNEIDER'
+    title: 'HORSE RIDER HOWARD SCHNEIDER',
+    date: '2018',
+    medium: 'Oil on canvas',
+    dimensions: ``
   },
   {
     url: P002,
-    title: 'FOOT SCRUB'
+    title: 'FOOT SCRUB',
+    date: '2019',
+    medium: 'Oil on canvas',
+    dimensions: ``
   },
   {
     url: P003,
-    title: 'TOXIC STEW'
+    title: 'TOXIC STEW',
+    date: '2018',
+    medium: 'Oil on canvas',
+    dimensions: ``
   },
   {
     url: P004,
-    title: 'RED ROSES'
+    title: 'RED ROSES',
+    date: '2018',
+    medium: 'Oil on canvas',
+    dimensions: ``
   },
   {
     url: P005,
-    title: 'WITCHER'
+    title: 'WITCHER',
+    date: '2018',
+    medium: 'Oil on canvas',
+    dimensions: ``
   },
   {
     url: P006,
-    title: 'THE SKEPTICISIM OF THE ANGRY MAN LANDED HIM IN A MIRE OF GLOOM AND DOOM'
+    title: 'THE SKEPTICISIM OF THE ANGRY MAN LANDED HIM IN A MIRE OF GLOOM AND DOOM',
+    date: '2016',
+    medium: 'Oil on canvas',
+    dimensions: `66" x 92"`
   },
   {
     url: P007,
-    title: 'BATH SCENE WITH STARVING ANIMAL'
+    title: 'BATH SCENE WITH STARVING ANIMAL',
+    date: '2017',
+    medium: 'Oil on canvas',
+    dimensions: `45" x 66"`
   },
   {
     url: P008,
-    title: 'IN AUTUMN I CUDDLE MY GUN AND TALK TO MY CAT'
+    title: 'IN AUTUMN I CUDDLE MY GUN AND TALK TO MY CAT',
+    date: '2015',
+    medium: 'Oil on canvas',
+    dimensions: `66" x 92"`
   }
 ];
 
 export const drawingsArr = [
   {
     url: D000,
-    title: 'EVIL DONKEY MAN'
+    title: 'EVIL DONKEY MAN',
+    date: '2017',
+    medium: 'Graphite on paper',
+    dimensions: `11" x 14"`
   },
   {
     url: D001,
-    title: 'ABYSMAL LANDSCAPE FUNERAL PROCESSION'
+    title: 'ABYSMAL LANDSCAPE FUNERAL PROCESSION',
+    date: '2016',
+    medium: 'Graphite on paper',
+    dimensions: `22" x 30"`
   },
   {
     url: D002,
-    title: 'OUTRAGE'
+    title: 'OUTRAGE',
+    date: '2017',
+    medium: 'Graphite on paper',
+    dimensions: `11" x 17"`
   },
   {
     url: D003,
-    title: 'ABYSMAL LANDSCAPE BOAT'
+    title: 'ABYSMAL LANDSCAPE BOAT',
+    date: '2016',
+    medium: 'Graphite on paper',
+    dimensions: `22" 30"`
   },
   {
     url: D004,
-    title: 'RATS'
+    title: 'RATS',
+    date: '2017',
+    medium: 'Graphite on paper',
+    dimensions: `16" x 12"`
   },
   {
     url: D005,
-    title: 'CART OF SAD'
+    title: 'CART OF SAD',
+    date: '2017',
+    medium: 'Graphite on paper',
+    dimensions: `10" x 13"`
   }
 ];

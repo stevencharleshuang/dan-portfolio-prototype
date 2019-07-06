@@ -8,6 +8,7 @@ export default class Drawings extends React.Component {
     this.state = {
       index: 0,
       show: false,
+      showInfo: false,
       target: ''
     };    
   };
@@ -48,6 +49,15 @@ export default class Drawings extends React.Component {
       show: false,
     });
   };
+
+  handleModalInfoMouseEnter = () => {
+    this.setState({ showInfo: true });
+  }
+  
+  handleModalInfoMouseLeave = () => {
+    this.setState({ showInfo: false });
+  }
+
 
   handleModalLBtnClick = () => {
     let index = parseInt(this.state.index) - 1;
@@ -113,9 +123,15 @@ export default class Drawings extends React.Component {
         </div>
         <Modal
           show={this.state.show} 
-          handleClose={this.hideModal}
+          showInfo={this.state.showInfo} 
           title={drawingsArr[this.state.index].title}
           src={drawingsArr[this.state.index].url}
+          date={drawingsArr[this.state.index].date}
+          medium={drawingsArr[this.state.index].medium}
+          dimensions={drawingsArr[this.state.index].dimensions}
+          handleModalInfoMouseEnter={this.handleModalInfoMouseEnter}
+          handleModalInfoMouseLeave={this.handleModalInfoMouseLeave}
+          handleClose={this.hideModal}
           handleModalLBtnClick={this.handleModalLBtnClick}
           handleModalRBtnClick={this.handleModalRBtnClick}>
         </Modal>

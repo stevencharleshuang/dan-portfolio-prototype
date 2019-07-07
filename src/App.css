@@ -373,3 +373,117 @@ footer img:hover {
 nav, .cv + a:active, a:hover {
   color: rgba(100, 100, 100, 0.8); 
 } */
+@media only screen and (max-width: 480px) {
+  /* body {
+    background-color: purple;
+  } */
+}
+
+@media only screen and (max-width: 575px) {
+  /* body {
+    background-color: purple;
+  } */
+  header {
+    flex-flow: column nowrap;
+  }
+  
+  header .logo {
+    margin: 0 auto;
+  }
+  
+  header nav {
+    margin: 0 auto;
+  }
+  
+  .paintings-gallery {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+  
+  .paintings .paintings-gallery .painting .overlay {
+    font-size: 1.2rem;
+  }
+
+  .drawings-gallery {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    /* grid-gap: 5px; */
+  }
+  
+  .drawings .drawings-gallery .drawing .overlay {
+    font-size: 1.2rem;
+  }
+
+  .cv {
+    padding: 5% 0;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    font-size: 0.9rem; 
+  }
+
+  .about img {
+    /* border: 5px solid rgba(100, 100, 100, 1); */
+    width: 40%;
+  }
+  
+  .about .content {
+    /* justify-self: flex-start; */
+    /* margin: 0 0 0 40px; */
+    margin: 0 auto;
+    font-size: 1.2rem;
+    /* text-align: left; */
+  }
+  
+  .modal .modal-main {
+    
+  }
+
+  .modal .modal-info {
+    max-width: 80%;
+  }
+  
+  .modal .modal-info h1 {
+    font-size: 1.2rem;
+  }
+  
+  .modal .modal-info p {
+    font-size: 1rem;
+  }
+
+  .modal-main img {
+    display: block;
+    /* width: 98%; */
+    width: auto;
+    max-width: 99%;
+    height: 99%;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 925px) {
+  
+  /* body {
+    background-color: yellow;
+  } */
+  .modal-main img {
+    display: block;
+    height: auto;
+    max-width: 95%;
+    max-height: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  /* body {
+    background-color: orange;
+  } */
+}
+
+@media only screen and (max-width: 1200px) {
+  /* body {
+    background-color: blue;
+  } */
+
+}
+  

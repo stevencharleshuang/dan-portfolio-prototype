@@ -178,12 +178,15 @@ main {
 
 .paintings {
   padding: 5% 0;
+  margin: 0 auto;
 }
 
 .paintings-gallery {
   display: grid;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: 33.3% 33.3% 33.3%;
   grid-template-rows: auto repeat(auto-fill, auto);
+  align-content: center;
+  justify-items: center;
   /* grid-gap: 5px; */
 }
 
@@ -267,10 +270,11 @@ main {
   top: 1%;
   left: 1%;
   max-width: 30%;
-  padding: 10px;
+  padding: 30px;
   background: rgba(0, 0, 0, 0.8);
   color: white;
-  border-radius: 5px;
+  text-align: left;
+  /* border-radius: 5px; */
 }
 
 .modal .modal-info h1 {
@@ -373,16 +377,22 @@ footer img:hover {
 nav, .cv + a:active, a:hover {
   color: rgba(100, 100, 100, 0.8); 
 } */
-@media only screen and (max-width: 480px) {
+
+@media only screen and (max-width: 925px) {
+  
   /* body {
-    background-color: purple;
+    background-color: yellow;
   } */
+  .modal-main img {
+    display: block;
+    height: auto;
+    max-width: 95%;
+    max-height: 100%;
+    margin: 0 auto;
+  }
 }
 
 @media only screen and (max-width: 575px) {
-  /* body {
-    background-color: purple;
-  } */
   header {
     flex-flow: column nowrap;
   }
@@ -396,7 +406,6 @@ nav, .cv + a:active, a:hover {
   }
   
   .paintings-gallery {
-    display: grid;
     grid-template-columns: 50% 50%;
   }
   
@@ -405,7 +414,6 @@ nav, .cv + a:active, a:hover {
   }
 
   .drawings-gallery {
-    display: grid;
     grid-template-columns: 50% 50%;
     /* grid-gap: 5px; */
   }
@@ -435,7 +443,9 @@ nav, .cv + a:active, a:hover {
   }
   
   .modal .modal-main {
-    
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
   }
 
   .modal .modal-info {
@@ -451,26 +461,20 @@ nav, .cv + a:active, a:hover {
   }
 
   .modal-main img {
-    display: block;
-    /* width: 98%; */
-    width: auto;
+    /* object-fit: cover; */
     max-width: 99%;
-    height: 99%;
+    max-height: 99%;
     margin: 0 auto;
   }
 }
 
-@media only screen and (max-width: 925px) {
-  
-  /* body {
-    background-color: yellow;
-  } */
-  .modal-main img {
-    display: block;
-    height: auto;
-    max-width: 95%;
-    max-height: 100%;
-    margin: 0 auto;
+@media only screen and (max-width: 480px) {
+  .paintings-gallery {
+    grid-template-columns: 100%;
+  }
+
+  .drawings-gallery {
+    grid-template-columns: 100%;
   }
 }
 

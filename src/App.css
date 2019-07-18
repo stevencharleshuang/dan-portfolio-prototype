@@ -369,14 +369,19 @@ footer img:hover {
   cursor: pointer;
 }
 
-/* nav, .cv + a:link, a:visited {
-  color: rgba(100, 100, 100, 1); 
-  text-decoration: none;
+@media only screen and (max-width: 1200px) {
+  /* body {
+    background-color: blue;
+  } */
+
 }
 
-nav, .cv + a:active, a:hover {
-  color: rgba(100, 100, 100, 0.8); 
-} */
+@media only screen and (max-width: 992px) {
+  /* body {
+    background-color: orange;
+  } */
+}
+
 
 @media only screen and (max-width: 925px) {
   
@@ -476,18 +481,5 @@ nav, .cv + a:active, a:hover {
   .drawings-gallery {
     grid-template-columns: 100%;
   }
-}
-
-@media only screen and (max-width: 992px) {
-  /* body {
-    background-color: orange;
-  } */
-}
-
-@media only screen and (max-width: 1200px) {
-  /* body {
-    background-color: blue;
-  } */
-
 }
   

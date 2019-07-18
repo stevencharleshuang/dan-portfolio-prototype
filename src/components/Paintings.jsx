@@ -51,12 +51,10 @@ export default class Paintings extends React.Component {
   };
 
   handleModalInfoMouseEnter = () => {
-    console.log('mouseEnter Info');
     this.setState({ showInfo: true });
   }
   
   handleModalInfoMouseLeave = () => {
-    console.log('mouseLeave Info');
     this.setState({ showInfo: false });
   }
 

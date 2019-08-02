@@ -82,6 +82,12 @@ export default class Paintings extends React.Component {
     console.log('detected keystroke');
   }
 
+  handleLoaded = (e) => {
+    console.log('painting loaded!', e.target);
+    // e.target.
+    // e.target.style = "visibility: visible;";
+  }
+
   render() {
     const paintings = paintingsArr.map((painting, i) => {
       return (
@@ -96,7 +102,11 @@ export default class Paintings extends React.Component {
           <img 
             src={painting.url} 
             alt="painting"
-            style={{ zIndex: "50" }}
+            style={{ 
+              zIndex: "50", 
+              // visibility: "hidden" 
+            }}
+            // onLoad={this.handleLoaded}
             data-index={i}
             data-title={painting.title} />
           <div 

@@ -83,9 +83,8 @@ export default class Paintings extends React.Component {
   }
 
   handleLoaded = (e) => {
-    console.log('painting loaded!', e.target);
-    // e.target.
-    // e.target.style = "visibility: visible;";
+    let container = this.refs[`painting-${e.target.dataset.index}`];
+    container.style = "visibility: visible;";
   }
 
   render() {
@@ -98,15 +97,18 @@ export default class Paintings extends React.Component {
           onClick={this.showModal}
           onMouseEnter={this.handleMouseEnter} 
           onMouseLeave={this.handleMouseLeave}
+          ref={`painting-${i}`}
+          style={{
+            visibility: "hidden"
+          }}
           key={i}>
           <img 
             src={painting.url} 
             alt="painting"
-            style={{ 
-              zIndex: "50", 
-              // visibility: "hidden" 
+            style={{  
+              zIndex: "50"
             }}
-            // onLoad={this.handleLoaded}
+            onLoad={this.handleLoaded}
             data-index={i}
             data-title={painting.title} />
           <div 

@@ -83,21 +83,32 @@ export default class Drawings extends React.Component {
     console.log('detected keystroke');
   }
 
+  handleLoaded = (e) => {
+    let container = this.refs[`drawing-${e.target.dataset.index}`];
+    container.style = "visibility: visible;";
+    container.className += ' fade-in';
+  }
+
   render() {
     const drawings = drawingsArr.map((drawing, i) => {
       return (
         <div 
-          className="drawing noselect"
+          className="drawing noselect fade-in one"
           data-index={i}
           data-title={drawing.title}
           onClick={this.showModal}
           onMouseEnter={this.handleMouseEnter} 
           onMouseLeave={this.handleMouseLeave}
+          ref={`drawing-${i}`}
+          style={{
+            visibility: "hidden"
+          }}
           key={i} >
           <img 
             src={drawing.url} 
             alt="drawing"
             style={{ zIndex: "50" }}
+            onLoad={this.handleLoaded}
             data-index={i}
             data-title={drawing.title} />
           <div 

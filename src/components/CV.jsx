@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function CV() {
   return(
-    <div className="cv">
+    <div className="cv fade-in">
       <p className="left">
         EDUCATION
       </p>

@@ -82,6 +82,12 @@ export default class Paintings extends React.Component {
     console.log('detected keystroke');
   }
 
+  handleLoaded = (e) => {
+    let container = this.refs[`painting-${e.target.dataset.index}`];
+    container.style = "visibility: visible;";
+    container.className += ' fade-in';
+  }
+
   render() {
     const paintings = paintingsArr.map((painting, i) => {
       return (
@@ -92,11 +98,18 @@ export default class Paintings extends React.Component {
           onClick={this.showModal}
           onMouseEnter={this.handleMouseEnter} 
           onMouseLeave={this.handleMouseLeave}
+          ref={`painting-${i}`}
+          style={{
+            visibility: "hidden"
+          }}
           key={i}>
           <img 
             src={painting.url} 
             alt="painting"
-            style={{ zIndex: "50" }}
+            style={{  
+              zIndex: "50"
+            }}
+            onLoad={this.handleLoaded}
             data-index={i}
             data-title={painting.title} />
           <div 

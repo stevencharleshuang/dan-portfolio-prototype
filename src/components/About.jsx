@@ -5,7 +5,7 @@ export default function About() {
   return(
     <div className="about">
       <img src={ProfilePic} alt="profile pic" />
-      <div className="content">
+      <div className="content fade-in">
         <p>
           Lives and works in New York City
         </p> 

@@ -86,13 +86,14 @@ export default class Drawings extends React.Component {
   handleLoaded = (e) => {
     let container = this.refs[`drawing-${e.target.dataset.index}`];
     container.style = "visibility: visible;";
+    container.className += ' fade-in';
   }
 
   render() {
     const drawings = drawingsArr.map((drawing, i) => {
       return (
         <div 
-          className="drawing noselect"
+          className="drawing noselect fade-in one"
           data-index={i}
           data-title={drawing.title}
           onClick={this.showModal}

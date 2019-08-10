@@ -85,6 +85,7 @@ export default class Paintings extends React.Component {
   handleLoaded = (e) => {
     let container = this.refs[`painting-${e.target.dataset.index}`];
     container.style = "visibility: visible;";
+    container.className += ' fade-in';
   }
 
   render() {
